@@ -170,22 +170,7 @@ function view_email {
             cat student-emails.txt                                                                                                           
             ./main.sh                                                                                                                                                                                                                                                
 }
-#backup function                                                                                                                       
-function back_up {                                                                                                                     
-    read -p "Are Sure You Want To Backup Your data (Y or N) if you backup this data everything will be backed up and you wont be able \
-to run this program unless you go to online sever or backup directory : " opt                                                          
-                                                                                                                                       
-   if [ "$opt" == 'Y' ] || [ "$opt" == 'y' ]; then                                                                                     
-            echo -n "opening Backup";                                                                                                  
-            load                                                                                                                       
-    ./move-to-directory.sh                                                                                                             
-    else                                                                                                                               
-    echo $opt                                                                                                                          
-            echo -n "returning to home";                                                                                               
-            load                                                                                                                       
-    ./main.sh                                                                                                                          
-    fi                                                                                                                                 
-}
+
 function exit_main {                                                                                                                   
     #send message for closing app                                                                                                      
     echo -n "Closing App The App Wait For Seconds To Finsh"                                                                            
@@ -203,11 +188,10 @@ echo "3) delete student"
 echo "4) view all students"
 echo "5) extract and sort emails"
 echo "6) view extracted emails"
-echo "7) Backup file on online Serve"
-echo "8) Exit Program"
+echo "7) Exit Program"
 
 echo -e "\n"
-read -p "Enter Your choice Here: (1-8) " choice
+read -p "Enter Your choice Here: (1-7) " choice
 echo -e "\n"
 
 case $choice in
@@ -229,10 +213,7 @@ case $choice in
     6)                                                                                                                                 
       view_email                                                                                                                     
       ;;                                                                                                                               
-    7)                                                                                                                                 
-        back_up                                                                                                                      
-        ;;                                                                                                                             
-    8)                                                                                                                                 
+    7)                                                                                                                                                                                                                                                             
         exit_main                                                                                                                    
         ;; 
 	
